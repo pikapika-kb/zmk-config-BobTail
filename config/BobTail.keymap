@@ -299,6 +299,20 @@
             bindings = <&kp K &kp O>;
             label = "KO";
         };
+
+        kakkol: kakkol {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>;
+            label = "KAKKOL";
+        };
+
+        kakkor: kakkor {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RBKT>;
+            label = "KAKKOR";
+        };
     };
 
     keymap {
@@ -306,10 +320,10 @@
 
         default_layer {
             bindings = <
-&kp Q               &kp W       &kp E         &kp R         &kp T                                                &kp A         &kp I  &kp U      &kp E    &kp DELETE
+&kp Q               &kp W       &kp E         &kp R         &kp T                                                &kp A         &kp I  &kp U      &ni      &kp DELETE
 &mt LEFT_WIN TAB    &kp S       &kp D         &lt 4 F       &kp G        &kp LC(Y)              &kp BACKSPACE    &kp K         &kp J  &lt 5 K    &lt 1 A  &kp RIGHT_ALT
-&mt LEFT_CONTROL Z  &kp X       &kp C         &kp V         &kp B        &kp LC(Z)              &kp PRINTSCREEN  &kp N         &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp TAB             &kp C_MUTE  &kp LEFT_GUI  &kp LEFT_ALT  &lt 3 SPACE  &mt LSHIFT DELETE      &lt 2 ENTER      &lt 1 RSHIFT                             &kp F4
+&mt LEFT_CONTROL Z  &kp X       &kp C         &kp V         &kp B        &kp LC(Z)              &kp PRINTSCREEN  &kp N         &kp M  &kp COMMA  &kp DOT  &kakkol
+&kp TAB             &kp C_MUTE  &kp LEFT_GUI  &kp LEFT_ALT  &lt 3 SPACE  &mt LSHIFT DELETE      &lt 2 ENTER      &lt 1 RSHIFT                             &kakkor
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
