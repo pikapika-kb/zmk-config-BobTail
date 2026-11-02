@@ -14,13 +14,13 @@
 #define YRW 1
 #define SMALLA 2
 #define SMALLY 3
-#define MOUSE 4
-#define SCROLL 5
-#define DAKU 6
-#define HANDAKU 7
-#define KCTRL 8
-#define QWERTY 9
-#define NUM 10
+#define DAKU 4
+#define HANDAKU 5
+#define KCTRL 6
+#define QWERTY 7
+#define NUM 8
+#define MOUSE 9
+#define SCROLL 10
 
 #define LEFT_KEYS 0 1 2 3 4 10 11 12 13 14 15 22 23 24 25 26 27 34 35 36 37 38 39
 #define RIGHT_KEYS 5 6 7 8 9 16 17 18 19 20 21 28 29 30 31 32 33 40 41 42
@@ -92,6 +92,26 @@
             require-prior-idle-ms = <150>;
             hold-trigger-key-positions = <RIGHT_KEYS>;
             hold-trigger-on-release;
+            bindings = <&mo>, <&kp>;
+        };
+
+        /* 右小指外側の中段(の / ;): 長押ししている間マウス層。トラックボールのクリック・スクロール用 */
+        ht_no: ht_no {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <150>;
+            bindings = <&mo>, <&k_no>;
+        };
+        ht_rq: ht_rq {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <150>;
             bindings = <&mo>, <&kp>;
         };
 
@@ -780,7 +800,7 @@
             display-name = "Kana";
             bindings = <
 &k_ko             &k_ke             &k_ku             &k_ki             &k_ka                                                 &k_a              &k_i              &k_u              &k_e              &k_o
-&k_so             &ht_se YRW 0      &ht_su SMALLA 0   &ht_si SMALLY 0   &k_sa             &none               &kp BSPC          &k_na             &k_ni             &k_nu             &k_ne             &k_no
+&k_so             &ht_se YRW 0      &ht_su SMALLA 0   &ht_si SMALLY 0   &k_sa             &none               &kp BSPC          &k_na             &k_ni             &k_nu             &k_ne             &ht_no MOUSE 0
 &k_to             &k_te             &k_tu             &k_ti             &k_ta             &kp COMMA           &ht_r HANDAKU DOT  &k_ma             &k_mi             &k_mu             &k_me             &k_mo
 &ht_ho LSHIFT 0   &k_he             &k_hu             &k_hi             &k_ha             &kp SPACE           &ht_r DAKU ENTER  &to_qwerty        &ctl_kana
             >;
@@ -814,26 +834,6 @@
 &trans            &trans            &trans            &trans            &trans                                                &k_xya            &kp UP            &k_xyu            &none             &k_xyo
 &trans            &trans            &trans            &trans            &trans            &trans              &trans            &kp LEFT          &kp DOWN          &kp RIGHT         &none             &none
 &trans            &trans            &trans            &trans            &trans            &trans              &trans            &k_xwa            &none             &none             &none             &none
-&trans            &trans            &trans            &trans            &trans            &trans              &trans            &trans            &trans
-            >;
-        };
-
-        mouse_layer {
-            display-name = "Mouse";
-            bindings = <
-&trans            &trans            &trans            &trans            &trans                                                &trans            &trans            &trans            &trans            &trans
-&trans            &trans            &trans            &trans            &trans            &trans              &trans            &trans            &mkp MB1          &trans            &mkp MB2          &trans
-&trans            &trans            &trans            &trans            &trans            &trans              &trans            &trans            &trans            &trans            &trans            &trans
-&trans            &trans            &trans            &trans            &trans            &trans              &trans            &trans            &trans
-            >;
-        };
-
-        scroll_layer {
-            display-name = "Scroll";
-            bindings = <
-&trans            &trans            &trans            &trans            &trans                                                &trans            &trans            &trans            &trans            &trans
-&trans            &trans            &trans            &trans            &trans            &trans              &trans            &trans            &trans            &trans            &trans            &trans
-&trans            &trans            &trans            &trans            &trans            &trans              &trans            &trans            &trans            &trans            &trans            &trans
 &trans            &trans            &trans            &trans            &trans            &trans              &trans            &trans            &trans
             >;
         };
@@ -872,7 +872,7 @@
             display-name = "QWERTY";
             bindings = <
 &kp Q             &kp W             &kp E             &kp R             &kp T                                                 &kp Y             &kp U             &kp I             &kp O             &kp P
-&kp A             &ht_lq NUM S      &kp D             &kp F             &kp G             &none               &kp BSPC          &kp H             &kp J             &kp K             &kp L             &kp SEMI
+&kp A             &ht_lq NUM S      &kp D             &kp F             &kp G             &none               &kp BSPC          &kp H             &kp J             &kp K             &kp L             &ht_rq MOUSE SEMI
 &kp Z             &kp X             &kp C             &kp V             &kp B             &kp COMMA           &kp DOT           &kp N             &kp M             &kp COMMA         &kp DOT           &kp SLASH
 &kp LSHIFT        &kp LALT          &kp DEL           &none             &none             &kp SPACE           &kp ENTER         &to_kana          &kp LCTRL
             >;
@@ -886,6 +886,26 @@
 &trans            &trans            &trans            &trans            &trans                                                &kp N1            &kp N2            &kp N3            &kp N4            &kp N5
 &trans            &trans            &trans            &trans            &trans            &trans              &trans            &kp N6            &kp N7            &kp N8            &kp N9            &kp N0
 &trans            &trans            &trans            &trans            &trans            &trans              &trans            &kp MINUS         &kp EQUAL         &kp SQT           &kp GRAVE         &kp BSLH
+&trans            &trans            &trans            &trans            &trans            &trans              &trans            &trans            &trans
+            >;
+        };
+
+        mouse_layer {
+            display-name = "Mouse";
+            bindings = <
+&trans            &trans            &trans            &trans            &trans                                                &trans            &trans            &trans            &trans            &trans
+&trans            &trans            &trans            &trans            &trans            &trans              &trans            &mkp MB3          &mkp MB1          &mkp MB2          &trans            &trans
+&trans            &trans            &trans            &trans            &trans            &trans              &trans            &trans            &trans            &trans            &trans            &trans
+&trans            &trans            &trans            &trans            &trans            &mo SCROLL          &trans            &trans            &trans
+            >;
+        };
+
+        scroll_layer {
+            display-name = "Scroll";
+            bindings = <
+&trans            &trans            &trans            &trans            &trans                                                &trans            &trans            &trans            &trans            &trans
+&trans            &trans            &trans            &trans            &trans            &trans              &trans            &trans            &trans            &trans            &trans            &trans
+&trans            &trans            &trans            &trans            &trans            &trans              &trans            &trans            &trans            &trans            &trans            &trans
 &trans            &trans            &trans            &trans            &trans            &trans              &trans            &trans            &trans
             >;
         };

@@ -96,16 +96,22 @@ parse_config:
     '&ht_ho LSHIFT 0':
       t: ほ
       h: Shift
-    '&ht_r 7 DOT':
+    '&ht_r 5 DOT':
       t: 。
       h: 半濁点
-    '&ht_r 6 ENTER':
+    '&ht_r 4 ENTER':
       t: Enter
       h: 濁点
-    '&ht_lq 10 S':
+    '&ht_lq 8 S':
       t: S
       h: 数字
-    '&to_qwerty': 英字へ
+    '&ht_no 9 0':
+    t: の
+    h: マウス
+  '&ht_rq 9 SEMI':
+    t: ;
+    h: マウス
+  '&to_qwerty': 英字へ
     '&to_kana': かなへ
     '&ctl_kana': Ctrl
     '&kp COMMA': ','
