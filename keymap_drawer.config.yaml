@@ -106,12 +106,12 @@ parse_config:
       t: S
       h: 数字
     '&ht_no 9 0':
-    t: の
-    h: マウス
-  '&ht_rq 9 SEMI':
-    t: ;
-    h: マウス
-  '&to_qwerty': 英字へ
+      t: の
+      h: マウス
+    '&ht_rq 9 SEMI':
+      t: ;
+      h: マウス
+    '&to_qwerty': 英字へ
     '&to_kana': かなへ
     '&ctl_kana': Ctrl
     '&kp COMMA': ','
