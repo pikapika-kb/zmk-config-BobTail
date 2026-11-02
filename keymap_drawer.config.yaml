@@ -1,0 +1,122 @@
+# keymap-drawer の設定。かなのマクロを、図の上ではかな文字で表示する。
+parse_config:
+  raw_binding_map:
+    '&k_a': あ
+    '&k_i': い
+    '&k_u': う
+    '&k_e': え
+    '&k_o': お
+    '&k_ka': か
+    '&k_ki': き
+    '&k_ku': く
+    '&k_ke': け
+    '&k_ko': こ
+    '&k_sa': さ
+    '&k_si': し
+    '&k_su': す
+    '&k_se': せ
+    '&k_so': そ
+    '&k_ta': た
+    '&k_ti': ち
+    '&k_tu': つ
+    '&k_te': て
+    '&k_to': と
+    '&k_na': な
+    '&k_ni': に
+    '&k_nu': ぬ
+    '&k_ne': ね
+    '&k_no': の
+    '&k_ha': は
+    '&k_hi': ひ
+    '&k_hu': ふ
+    '&k_he': へ
+    '&k_ho': ほ
+    '&k_ma': ま
+    '&k_mi': み
+    '&k_mu': む
+    '&k_me': め
+    '&k_mo': も
+    '&k_ya': や
+    '&k_yu': ゆ
+    '&k_yo': よ
+    '&k_ra': ら
+    '&k_ri': り
+    '&k_ru': る
+    '&k_re': れ
+    '&k_ro': ろ
+    '&k_wa': わ
+    '&k_wyi': ゐ
+    '&k_wye': ゑ
+    '&k_wo': を
+    '&k_nn': ん
+    '&k_xa': ぁ
+    '&k_xi': ぃ
+    '&k_xu': ぅ
+    '&k_xe': ぇ
+    '&k_xo': ぉ
+    '&k_xtu': っ
+    '&k_xya': ゃ
+    '&k_xyu': ゅ
+    '&k_xyo': ょ
+    '&k_xwa': ゎ
+    '&k_ga': が
+    '&k_gi': ぎ
+    '&k_gu': ぐ
+    '&k_ge': げ
+    '&k_go': ご
+    '&k_za': ざ
+    '&k_zi': じ
+    '&k_zu': ず
+    '&k_ze': ぜ
+    '&k_zo': ぞ
+    '&k_da': だ
+    '&k_di': ぢ
+    '&k_du': づ
+    '&k_de': で
+    '&k_do': ど
+    '&k_ba': ば
+    '&k_bi': び
+    '&k_bu': ぶ
+    '&k_be': べ
+    '&k_bo': ぼ
+    '&k_pa': ぱ
+    '&k_pi': ぴ
+    '&k_pu': ぷ
+    '&k_pe': ぺ
+    '&k_po': ぽ
+    '&ht_se 1 0':
+      t: せ
+      h: やらわ
+    '&ht_su 2 0':
+      t: す
+      h: 小あ・F
+    '&ht_si 3 0':
+      t: し
+      h: 小や・矢印
+    '&ht_ho LSHIFT 0':
+      t: ほ
+      h: Shift
+    '&ht_r 7 DOT':
+      t: 。
+      h: 半濁点
+    '&ht_r 6 ENTER':
+      t: Enter
+      h: 濁点
+    '&ht_lq 10 S':
+      t: S
+      h: 数字
+    '&to_qwerty': 英字へ
+    '&to_kana': かなへ
+    '&ctl_kana': Ctrl
+    '&kp COMMA': ','
+    '&kp LBKT': 「
+    '&kp RBKT': 」
+    '&kp MINUS': '-'
+  trans_legend: ''
+  layer_legend_map: {}
+draw_config:
+  key_w: 60
+  key_h: 56
+  combo_w: 26
+  combo_h: 22
+  draw_key_sides: false
