@@ -876,6 +876,8 @@
 &kp Z             &kp X             &kp C             &kp V             &kp B             &kp COMMA           &kp DOT           &kp N             &kp M             &kp COMMA         &kp DOT           &kp SLASH
 &kp LSHIFT        &kp LALT          &kp DEL           &none             &none             &kp SPACE           &kp ENTER         &to_kana          &kp LCTRL
             >;
+
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         num_layer {
